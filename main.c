@@ -48,6 +48,7 @@ int main (int argc, char ** argv) {
 	    msgrcv (msgId, &uz1, 3 * sizeof (int), 5, 0777);
 	    if (x == uz1.x && y == uz1.y && z == uz1.z) printf ("OK\n");
 	    else printf ("Nem OK\n");
+	    msgctl (msgId, IPC_RMID, NULL);
 	}
 	else {
 	    if (i == 0) {
